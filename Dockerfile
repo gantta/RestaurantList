@@ -1,4 +1,4 @@
-FROM gradle:jre8 as builder
+FROM gradle:jdk8-openj9 as builder
 
 COPY . /app
 RUN ls -la /app
