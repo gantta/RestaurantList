@@ -13,10 +13,10 @@ FROM openjdk:8-jdk-alpine
 VOLUME /myvolume
 
 ARG TARGET=app/build/libs
-COPY --from=builder ${TARGET}/ /app/target/RestaurantList.jar
+COPY --from=builder ${TARGET}/ /app/build/RestaurantList.jar
 
 # Debug the build:
-RUN ls -la /app/target
+RUN ls -la /app/build
 
 
-ENTRYPOINT ["java","-jar","./app/target/RestaurantList.jar"]
+ENTRYPOINT ["java","-jar","./app/build/RestaurantList.jar"]
