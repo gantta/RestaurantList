@@ -12,7 +12,7 @@ node {
         }
         stage('Build Docker Image') {
             sh 'docker build . -t restaurantlist:latest'
-            sh 'docker images ls'
+            sh 'docker image ls | grep restaurant'
         }
     }
 }
